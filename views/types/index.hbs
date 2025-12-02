@@ -1,0 +1,15 @@
+<h1>Tipos</h1>
+<a href="/types/create" class="btn btn-success mb-3">Crear nuevo tipo</a>
+<div class="row">
+    {{#each types}}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <a href="/types/edit/{{this.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/types/delete/{{this.id}}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

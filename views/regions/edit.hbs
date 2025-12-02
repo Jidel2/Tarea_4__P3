@@ -1,0 +1,12 @@
+<h1>Editar Region</h1>
+{{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+{{/if}}
+<form action="/regions/edit/{{region.id}}" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{region.name}}" required>
+    </div>
+    <a href="/regions" class="btn btn-secondary">Atras</a>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

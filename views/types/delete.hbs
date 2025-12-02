@@ -1,0 +1,8 @@
+<h1>Eliminar Tipo</h1>
+<div class="alert alert-warning">
+    Estas seguro de eliminar este tipo?: {{type.name}}?
+</div>
+<form action="/types/delete/{{type.id}}" method="POST">
+    <a href="/types" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>

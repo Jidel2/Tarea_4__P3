@@ -1,0 +1,34 @@
+<h1>Crear Pokemon</h1>
+{{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+{{/if}}
+<form action="/pokemons/create" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Imagen URL</label>
+        <input type="text" class="form-control" id="image" name="image" required>
+    </div>
+    <div class="mb-3">
+        <label for="regionId" class="form-label">Región</label>
+        <select class="form-select" id="regionId" name="regionId" required>
+            <option value="">Seleccionar Región</option>
+            {{#each regions}}
+                <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="typeId" class="form-label">Tipo principal</label>
+        <select class="form-select" id="typeId" name="typeId" required>
+            <option value="">Seleccionar tipo</option>
+            {{#each types}}
+                <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <a href="/pokemons" class="btn btn-secondary">Atras</a>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>

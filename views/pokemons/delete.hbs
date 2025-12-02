@@ -1,0 +1,8 @@
+<h1>Eliminar Pokemon</h1>
+<div class="alert alert-warning">
+ Estas seguro de que quieres eliminar este pokemon?😨: {{pokemon.name}}?
+</div>
+<form action="/pokemons/delete/{{pokemon.id}}" method="POST">
+    <a href="/pokemons" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>

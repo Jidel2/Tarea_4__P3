@@ -1,0 +1,8 @@
+<h1>Eliminar Region</h1>
+<div class="alert alert-warning">
+    Estas seguro de que quieres eliminar esta región?🗣🔥🔥: {{region.name}}?
+</div>
+<form action="/regions/delete/{{region.id}}" method="POST">
+    <a href="/regions" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>

@@ -1,0 +1,19 @@
+<h1>Pokemones</h1>
+<a href="/pokemons/create" class="btn btn-success mb-3">Crear nuevo pokemon</a>
+
+<div class="row">
+    {{#each pokemons}}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">Tipo: {{this.Type.name}}</p>
+                    <p class="card-text">Región: {{this.Region.name}}</p>
+                    <a href="/pokemons/edit/{{this.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/pokemons/delete/{{this.id}}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

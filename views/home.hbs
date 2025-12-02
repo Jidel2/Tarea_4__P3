@@ -1,0 +1,43 @@
+<h1>Pokedex</h1>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <form action="/" method="GET">
+            <div class="input-group">
+                <input type="text" name="name" class="form-control" placeholder="Search by Pokemon name" value="{{name}}">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form action="/" method="GET">
+            <div class="input-group mb-3">
+                <label for="regionId" class="form-label visually-hidden">Región</label>
+                <select name="regionId" id="regionId" class="form-select" aria-label="Select Region">
+                    <option value="">Todas las regiones</option>
+                    {{#each regions}}
+                        <option value="{{this.id}}" {{#if ../regionId}}{{#if (eq ../regionId this.id)}}selected{{/if}}{{/if}}>{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    {{#each pokemons}}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}" style="max-height: 200px; object-fit: contain;">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">Tipo: {{this.Type.name}}</p>
+                    <p class="card-text">Región: {{this.Region.name}}</p>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No se encontro pokemones🤡.</p>
+    {{/each}}
+</div>
